@@ -1,20 +1,25 @@
-// import React from 'react'
+import React from 'react'
 
 
-// const BookCard = ({data}) =>{
-// 	const Books = ''
-// 	if(data.length < 0) {
-// 		Books = '<p> Please Seacrh For A Content </p>'
-// 	}else{
-// 		Books = '<p> Books</p>'
-// 	}
+const BookCard = ({data}) =>{
 
-// 	return(
-// 		<div> 
-// 			{Books}
-// 		</div>
-// 	)
+	const Books = data.map(book => {
+		return (
+			<div key={book.id}>
+				<p>{book.volumeInfo.title}</p>
+				<p>{book.volumeInfo.publisher} </p>
+				<p>{book.volumeInfo.authors} </p>
+				<img src={book.volumeInfo.imageLinks.thumbnail} />
+			</div>
+		)
+	})
 
-// }
+	return(
+		<div> 
+			{Books}
+		</div>
+	)
 
-// export default BookCard
+}
+
+export default BookCard
