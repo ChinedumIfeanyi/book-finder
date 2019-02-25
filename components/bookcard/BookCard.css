@@ -1,0 +1,29 @@
+.book-data {
+	margin: 10px;
+	padding: 10px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+}
+.book-item {
+	text-align: center;
+	display: flex;
+}
+.books{
+	width: 90%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+article {
+	margin: auto;
+}
+a{
+	margin-left: 7px;
+	border: 2px solid #fff;
+	text-decoration: none;
+	background-color: green;
+	color: #fff;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 5px;
+}

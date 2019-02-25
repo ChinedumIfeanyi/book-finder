@@ -1,21 +1,27 @@
 import React from 'react'
 
+import "./BookCard.css"
 
 const BookCard = ({data}) =>{
 
 	const Books = data.map(book => {
 		return (
-			<div key={book.id}>
-				<p>{book.volumeInfo.title}</p>
-				<p>{book.volumeInfo.publisher} </p>
-				<p>{book.volumeInfo.authors} </p>
-				<img src={book.volumeInfo.imageLinks.thumbnail} />
-			</div>
+			<section className="book-data">
+				<div key={book.id} className="book-item">
+					<img src={book.volumeInfo.imageLinks.thumbnail} />
+					<article>
+						<h3>{book.volumeInfo.title}</h3>
+						<h3>{book.volumeInfo.publisher} </h3>
+						<h3>{book.volumeInfo.authors} </h3>
+						<a href="#"> Checkout Book </a>
+					</article>
+				</div>
+			</section>
 		)
 	})
 
 	return(
-		<div> 
+		<div className="books"> 
 			{Books}
 		</div>
 	)
