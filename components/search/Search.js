@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 
-import Button from './Button'
-import InputBox from './InputBox'
+import Button from '../button/Button'
+import InputBox from '../inputbox/InputBox'
 
 
 const Search = (
