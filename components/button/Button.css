@@ -4,5 +4,6 @@
 	background-color: green;
 	color: #fff;
 	font-size: 18px;
-	border-width: 2px
+	border-width: 2px;
+	cursor: pointer;
 }

@@ -23,22 +23,28 @@ class Book extends Component {
 		}
 	};
 
-	componentDidMount(){
-		this.setState({
-			data: Api
-		})
-	}
-
 	//fetch books from server
 	getBooks(){
 		const url = this.props.url
 		const inputValue = this.state.inputValue
 		const bookUrl = url + inputValue
 
-		// axios.get(bookUrl)
-		// .then(response => {
-		// 	console.log(response.data.items)
-		// })
+		//if search box is empty 
+		//set state to empty
+		//return 
+		if(inputValue == ""){
+			this.setState({
+				data: []
+			})
+		}
+		axios.get(bookUrl)
+		.then(response => {
+			console.log(response.data.items)
+			const data = response.data.items
+			this.setState({
+				data
+			})
+		})
 	}
 	handleChange(evt){
 		const inputValue = evt.target.value

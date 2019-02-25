@@ -1,4 +1,10 @@
+h2 {
+	color: #aaf;
+	width: 100%;
+	text-transform: capitalize;
+}
 .book-data {
+	width: 43%;
 	margin: 10px;
 	padding: 10px;
 	border: 2px solid #fff;
@@ -9,7 +15,8 @@
 	display: flex;
 }
 .books{
-	width: 90%;
+	text-align: center;
+	width: 99%;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;

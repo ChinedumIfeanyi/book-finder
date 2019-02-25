@@ -8,7 +8,7 @@ const InputBox = ({ value, handleChange }) =>{
 			type="text" 
 			value={ value }
 			onChange={ handleChange }
-			placeholder="Search"
+			placeholder="Search by book, title or author"
 		/>
 	)
 }

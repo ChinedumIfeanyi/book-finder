@@ -4,22 +4,36 @@ import "./BookCard.css"
 
 const BookCard = ({data}) =>{
 
-	const Books = data.map(book => {
-		return (
-			<section className="book-data">
-				<div key={book.id} className="book-item">
-					<img src={book.volumeInfo.imageLinks.thumbnail} />
-					<article>
-						<h3>{book.volumeInfo.title}</h3>
-						<h3>{book.volumeInfo.publisher} </h3>
-						<h3>{book.volumeInfo.authors} </h3>
-						<a href="#"> Checkout Book </a>
-					</article>
-				</div>
-			</section>
-		)
-	})
+	let Books;
+	if(!data.length) {
+		Books = <h2> Nothing to search.Please enter a search word </h2>
+	}else {
+		Books = data.map(book => {
 
+			const imageLink = book.volumeInfo.imageLinks
+			const bookTitle = book.volumeInfo.title
+			const bookPublisher = book.volumeInfo.publisher
+			const author = book.volumeInfo.authors
+			const bookLink = book.volumeInfo.previewLink
+
+			return (
+
+				<section key={book.id} className="book-data">
+					<div className="book-item">
+						<img src={ imageLink.thumbnail } />
+						<article>
+							<h3>{bookTitle}</h3>
+							<h3>{bookPublisher} </h3>
+							<h3>{author} </h3>
+							<a href={bookLink} target="_blank"> See this Book </a>
+						</article>
+					</div>
+				</section>
+			)
+		})
+	
+	}
+	
 	return(
 		<div className="books"> 
 			{Books}
