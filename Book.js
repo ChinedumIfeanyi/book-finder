@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
-import BookCard from './components/BookCard'
-import Search from './components/Search'
+import BookCard from './components/bookcard/BookCard'
+import Search from './components/search/Search'
+
+//css
+import './Book.css'
 
 //mock data
 import Api from './MockData/Api'
@@ -54,7 +57,10 @@ class Book extends Component {
 					inputValue = { inputValue }
 					handleChange = { this.handleChange.bind(this) }
 				/>
-				<BookCard data = { data }/>
+				<hr />
+				<section className="book-card">
+					<BookCard data = { data }/>
+				</section>
 			</div>
 
 		)
