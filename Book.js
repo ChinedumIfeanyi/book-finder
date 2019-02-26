@@ -7,7 +7,7 @@ import Search from './components/search/Search'
 import './Book.css'
 
 //mock data
-import Api from './MockData/Api'
+//import Api from './MockData/Api'
 
 //ajax http library
 import axios from 'axios'
@@ -39,7 +39,6 @@ class Book extends Component {
 		}
 		axios.get(bookUrl)
 		.then(response => {
-			console.log(response.data.items)
 			const data = response.data.items
 			this.setState({
 				data
