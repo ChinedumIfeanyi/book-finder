@@ -9,7 +9,7 @@ const BookCard = ({data}) =>{
 		Books = <h2> Nothing to search.Please enter a search word </h2>
 	}else {
 		Books = data.map(book => {
-			const imageLink = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : '#'
+			const imageLink = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''
 			const bookTitle = book.volumeInfo.title
 			const bookPublisher = book.volumeInfo.publisher
 			const author = book.volumeInfo.authors
@@ -19,7 +19,7 @@ const BookCard = ({data}) =>{
 
 				<section key={book.id} className="book-data">
 					<div className="book-item">
-						<img src={ imageLink.thumbnail } />
+						<img src={ imageLink } alt="img presentation"/>
 						<article>
 							<h3>{bookTitle}</h3>
 							<h3>{bookPublisher} </h3>
