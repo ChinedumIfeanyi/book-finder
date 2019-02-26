@@ -9,8 +9,7 @@ const BookCard = ({data}) =>{
 		Books = <h2> Nothing to search.Please enter a search word </h2>
 	}else {
 		Books = data.map(book => {
-
-			const imageLink = book.volumeInfo.imageLinks
+			const imageLink = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : '#'
 			const bookTitle = book.volumeInfo.title
 			const bookPublisher = book.volumeInfo.publisher
 			const author = book.volumeInfo.authors
